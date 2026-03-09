@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2")
+    format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 200 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    /* Deep navy blue for trust */
+    --primary: 25.5 0.12 247;
+    --primary-foreground: 99 0 0;
+
+    /* Bright green for CTAs */
+    --accent: 74.5 0.2 142;
+    --accent-foreground: 99 0 0;
+
+    --background: 99 0 0;
+    --foreground: 15 0.02 260;
+
+    --card: 97 0.005 260;
+    --card-foreground: 15 0.02 260;
+
+    --popover: 99 0 0;
+    --popover-foreground: 15 0.02 260;
+
+    --secondary: 94 0.01 260;
+    --secondary-foreground: 25 0.08 260;
+
+    --muted: 94 0.01 260;
+    --muted-foreground: 55 0.03 260;
+
+    --destructive: 55 0.22 27;
+    --destructive-foreground: 99 0 0;
+
+    --border: 88 0.02 260;
+    --input: 88 0.02 260;
+    --ring: 25.5 0.12 247;
+
+    --radius: 0.5rem;
+
+    --chart-1: 25.5 0.12 247;
+    --chart-2: 74.5 0.2 142;
+    --chart-3: 55 0.22 27;
+    --chart-4: 70 0.15 200;
+    --chart-5: 80 0.1 100;
+
+    --sidebar: 97 0.005 260;
+    --sidebar-foreground: 15 0.02 260;
+    --sidebar-primary: 25.5 0.12 247;
+    --sidebar-primary-foreground: 99 0 0;
+    --sidebar-accent: 94 0.01 260;
+    --sidebar-accent-foreground: 25 0.08 260;
+    --sidebar-border: 88 0.02 260;
+    --sidebar-ring: 25.5 0.12 247;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .bg-brand-navy {
+    background-color: oklch(25.5% 0.12 247);
+  }
+  .bg-brand-green {
+    background-color: oklch(74.5% 0.2 142);
+  }
+  .text-brand-navy {
+    color: oklch(25.5% 0.12 247);
+  }
+  .text-brand-green {
+    color: oklch(74.5% 0.2 142);
+  }
+  .border-brand-navy {
+    border-color: oklch(25.5% 0.12 247);
+  }
+  .hover\:bg-brand-green-dark:hover {
+    background-color: oklch(65% 0.2 142);
+  }
+  .hover\:bg-brand-navy-dark:hover {
+    background-color: oklch(20% 0.1 247);
+  }
+}
