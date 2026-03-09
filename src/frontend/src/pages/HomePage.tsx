@@ -17,6 +17,7 @@ import {
   Flame,
   Home,
   Layers,
+  MapPin,
   MessageCircle,
   Shield,
   Star,
@@ -82,6 +83,55 @@ const testimonials = [
   },
 ];
 
+const suburbs = [
+  {
+    name: "Norwood",
+    path: "/bond-cleaning-norwood",
+    ocid: "suburbs.norwood.link",
+  },
+  {
+    name: "Glenelg",
+    path: "/bond-cleaning-glenelg",
+    ocid: "suburbs.glenelg.link",
+  },
+  { name: "Unley", path: "/bond-cleaning-unley", ocid: "suburbs.unley.link" },
+  {
+    name: "Prospect",
+    path: "/bond-cleaning-prospect",
+    ocid: "suburbs.prospect.link",
+  },
+  {
+    name: "Mitcham",
+    path: "/bond-cleaning-mitcham",
+    ocid: "suburbs.mitcham.link",
+  },
+  {
+    name: "Burnside",
+    path: "/bond-cleaning-burnside",
+    ocid: "suburbs.burnside.link",
+  },
+  {
+    name: "Marion",
+    path: "/bond-cleaning-marion",
+    ocid: "suburbs.marion.link",
+  },
+  {
+    name: "Tea Tree Gully",
+    path: "/bond-cleaning-tea-tree-gully",
+    ocid: "suburbs.tea-tree-gully.link",
+  },
+  {
+    name: "Mawson Lakes",
+    path: "/bond-cleaning-mawson-lakes",
+    ocid: "suburbs.mawson-lakes.link",
+  },
+  {
+    name: "Salisbury",
+    path: "/bond-cleaning-salisbury",
+    ocid: "suburbs.salisbury.link",
+  },
+];
+
 const faqs = [
   {
     q: "What is bond cleaning and why is it required?",
@@ -139,7 +189,7 @@ function TopRatedCompanies() {
       <p>Here are five top-rated bond cleaning companies in Australia:</p>
       <ol className="space-y-3 list-decimal list-inside">
         <li>
-          <strong>Fantastic Cleaners</strong> \u2014{" "}
+          <strong>Fantastic Cleaners</strong> &mdash;{" "}
           <a
             href="https://www.fantasticcleaners.com.au"
             target="_blank"
@@ -148,12 +198,12 @@ function TopRatedCompanies() {
           >
             fantasticcleaners.com.au
           </a>{" "}
-          \u2014 One of Australia\u2019s largest cleaning networks, offering end
-          of lease cleaning with a bond-back guarantee. They operate across all
-          major cities and have thousands of verified customer reviews.
+          &mdash; One of Australia&apos;s largest cleaning networks, offering
+          end of lease cleaning with a bond-back guarantee. They operate across
+          all major cities and have thousands of verified customer reviews.
         </li>
         <li>
-          <strong>Jim\u2019s Cleaning</strong> \u2014{" "}
+          <strong>Jim&apos;s Cleaning</strong> &mdash;{" "}
           <a
             href="https://www.jimscleaning.com.au"
             target="_blank"
@@ -162,12 +212,12 @@ function TopRatedCompanies() {
           >
             jimscleaning.com.au
           </a>{" "}
-          \u2014 A trusted Australian franchise with local cleaners in every
-          suburb. Jim\u2019s offers vacate cleaning, carpet cleaning, and window
+          &mdash; A trusted Australian franchise with local cleaners in every
+          suburb. Jim&apos;s offers vacate cleaning, carpet cleaning, and window
           cleaning. They back their work with a satisfaction guarantee.
         </li>
         <li>
-          <strong>Cleancorp</strong> \u2014{" "}
+          <strong>Cleancorp</strong> &mdash;{" "}
           <a
             href="https://www.cleancorp.com.au"
             target="_blank"
@@ -176,13 +226,13 @@ function TopRatedCompanies() {
           >
             cleancorp.com.au
           </a>{" "}
-          \u2014 A national commercial and residential cleaning company with a
+          &mdash; A national commercial and residential cleaning company with a
           strong reputation for end of lease cleans. Cleancorp uses eco-friendly
           products and trains all staff to meet real estate inspection
           standards.
         </li>
         <li>
-          <strong>OzClean</strong> \u2014{" "}
+          <strong>OzClean</strong> &mdash;{" "}
           <a
             href="https://www.ozclean.com.au"
             target="_blank"
@@ -191,12 +241,12 @@ function TopRatedCompanies() {
           >
             ozclean.com.au
           </a>{" "}
-          \u2014 A specialist end of lease and bond cleaning service operating
+          &mdash; A specialist end of lease and bond cleaning service operating
           in Adelaide, Brisbane, and Melbourne. OzClean provides detailed
           checklists and a re-clean guarantee.
         </li>
         <li>
-          <strong>Tru Bond Cleaning</strong> \u2014{" "}
+          <strong>Tru Bond Cleaning</strong> &mdash;{" "}
           <a
             href="https://trubondcleaningbrisbane.com"
             target="_blank"
@@ -205,7 +255,7 @@ function TopRatedCompanies() {
           >
             trubondcleaningbrisbane.com
           </a>{" "}
-          \u2014 A professional bond and vacate cleaning company committed to
+          &mdash; A professional bond and vacate cleaning company committed to
           helping tenants get their full bond back. Tru Bond Cleaning delivers
           thorough, checklist-based cleans backed by a satisfaction guarantee.
           Their experienced team covers all areas including kitchens, bathrooms,
@@ -233,7 +283,7 @@ function CarpetProductsList() {
           >
             Bissell Professional Carpet Cleaning Formula
           </a>{" "}
-          \u2014 great for deep stains
+          &mdash; great for deep stains
         </li>
         <li>
           <a
@@ -244,7 +294,7 @@ function CarpetProductsList() {
           >
             Preen Carpet Cleaner
           </a>{" "}
-          \u2014 widely available in Australian supermarkets
+          &mdash; widely available in Australian supermarkets
         </li>
         <li>
           <a
@@ -255,7 +305,7 @@ function CarpetProductsList() {
           >
             Stanley Steemer Carpet Shampoo
           </a>{" "}
-          \u2014 commercial grade
+          &mdash; commercial grade
         </li>
         <li>
           <a
@@ -266,7 +316,7 @@ function CarpetProductsList() {
           >
             Resolve Carpet Cleaner
           </a>{" "}
-          \u2014 effective on pet stains and odours
+          &mdash; effective on pet stains and odours
         </li>
       </ul>
       <p>
@@ -327,7 +377,7 @@ export default function HomePage() {
             Adelaide&apos;s Most Trusted Bond Cleaners
             <br />
             <span className="text-brand-green">
-              \u2014 Get Your Full Bond Back
+              &mdash; Get Your Full Bond Back
             </span>
           </h1>
           <p className="text-white/85 text-lg md:text-xl font-body max-w-3xl mx-auto mb-8">
@@ -402,7 +452,7 @@ export default function HomePage() {
               Our Bond Cleaning Services
             </h2>
             <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
-              We cover everything your real estate agent checks \u2014 from top
+              We cover everything your real estate agent checks &mdash; from top
               to bottom, inside and out.
             </p>
           </div>
@@ -554,8 +604,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* AREAS WE SERVE */}
+      <section
+        className="py-16 bg-secondary/20"
+        aria-labelledby="areas-heading"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2
+              id="areas-heading"
+              className="font-display font-bold text-3xl md:text-4xl text-brand-navy mb-4"
+            >
+              Bond Cleaning Across Adelaide&apos;s Best Suburbs
+            </h2>
+            <p className="text-muted-foreground font-body text-lg max-w-2xl mx-auto">
+              We service all major Adelaide suburbs. Click your suburb below to
+              find out more about our local bond cleaning service.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {suburbs.map((suburb) => (
+              <Link
+                key={suburb.name}
+                to={suburb.path as "/"}
+                data-ocid={suburb.ocid}
+                className="group flex flex-col items-center gap-2 bg-white rounded-xl p-4 border border-border shadow-xs hover:shadow-md hover:border-brand-green transition-all text-center"
+              >
+                <div className="w-10 h-10 rounded-full bg-brand-navy/10 flex items-center justify-center group-hover:bg-brand-green/10 transition-colors">
+                  <MapPin
+                    size={18}
+                    className="text-brand-navy group-hover:text-brand-green transition-colors"
+                  />
+                </div>
+                <span className="font-body font-semibold text-sm text-brand-navy group-hover:text-brand-green transition-colors leading-tight">
+                  {suburb.name}
+                </span>
+                <span className="font-body text-xs text-muted-foreground">
+                  Bond Cleaning
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section className="py-16 bg-secondary/20" aria-labelledby="faq-heading">
+      <section className="py-16 bg-white" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2
@@ -575,7 +669,7 @@ export default function HomePage() {
                 key={i}
                 value={`item-${i + 1}`}
                 data-ocid={`faq.item.${i + 1}`}
-                className="bg-white rounded-xl border border-border px-4 shadow-xs"
+                className="bg-secondary/30 rounded-xl border border-border px-4 shadow-xs"
               >
                 <AccordionTrigger className="font-display font-semibold text-brand-navy text-left hover:no-underline py-4">
                   {faq.q}

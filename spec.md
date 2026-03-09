@@ -1,34 +1,27 @@
 # Tru Adelaide Bond Cleaners
 
 ## Current State
-New project — no existing code.
+The site has 4 pages: Home, Services, About, Contact. No suburb-specific pages exist. The homepage has no suburb landing page links.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Full website for Tru Adelaide Bond Cleaners (vacate cleaning company in Adelaide)
-- Home page with hero, services overview, FAQ (12 questions), trust signals, CTA
-- Services page with individual service pages (each ~400 words)
-- About page
-- Contact page with mailto: form (opens customer's email client pre-filled to humptydumptybondcleaning@gmail.com)
-- SEO meta tags, title tags, descriptions, alt text on all images
-- Google site verification meta tag in <head>
-- WhatsApp contact link (0488841883)
-- Branded images with alt text on each page
-- FAQ section with 12 detailed questions including top bond cleaning companies list
+- 10 suburb landing pages: Norwood, Glenelg, Unley, Prospect, Mitcham, Burnside, Marion, Tea Tree Gully, Mawson Lakes, Salisbury
+- Each suburb page: ~400 words simple content, SEO meta title/description, hero image with alt text, CTA section
+- Suburb hub section on homepage with links to all 10 suburb pages (for SEO interlinking)
+- Routes for each suburb: /bond-cleaning-norwood, /bond-cleaning-glenelg, etc.
+- 2 suburb-themed generated images to share across pages
 
 ### Modify
-N/A
+- routeTree.tsx: register 10 new suburb routes
+- HomePage.tsx: add "Areas We Serve" section with links to all suburb pages
 
 ### Remove
-N/A
+- Nothing removed
 
 ## Implementation Plan
-1. Generate branded hero and service images
-2. Build single-page React app with routing (Home, Services, About, Contact)
-3. Home page: hero, services grid, FAQ accordion (12 Qs), trust badges, WhatsApp CTA
-4. Services: Bond/Vacate Clean, Carpet Steam Clean, Oven Clean, Window Clean, Wall Wash
-5. Contact form using mailto: link — opens customer email pre-filled
-6. SEO: Helmet tags, meta description, OG tags, Google verification tag
-7. All images have descriptive alt text, branding overlay
-8. Content: 3000+ words, active voice, Australian English, simple language
+1. Generate 2 suburb cleaning hero images
+2. Create a reusable SuburbPage component with props for suburb name, content, meta tags
+3. Create 10 individual suburb page files importing SuburbPage
+4. Register all suburb routes in routeTree.tsx
+5. Add "Areas We Serve" grid section to HomePage.tsx with suburb links
